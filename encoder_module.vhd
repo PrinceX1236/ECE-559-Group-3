@@ -1,19 +1,17 @@
-
 library ieee;
 use ieee.std_logic_1164.all;
 
-
-
-entity turbo_encoder is
+entity encoder_module is
 port(
 	  clock : IN STD_LOGIC;
 	  reset : IN STD_LOGIC;
 	  cin	: IN STD_LOGIC;
+	  xout  : OUT STD_LOGIC;
 	  zout  : OUT STD_LOGIC
 	);
 end entity;
 
-architecture arc of turbo_encoder is
+architecture arc of encoder_module is
 
 component shiftreg
 	PORT
@@ -33,6 +31,7 @@ begin
 
 sft_in <= cin xor (q_x(0) xor q_x(1));
 zout <= (sft_in xor q_x(2)) xor q_x(0);
+xout <= q_x(0) xor q_x(1);
 
 sft0 : shiftreg port map(
 						  clock   => clock,
@@ -43,4 +42,3 @@ sft0 : shiftreg port map(
 						);
 
 end arc;
-
