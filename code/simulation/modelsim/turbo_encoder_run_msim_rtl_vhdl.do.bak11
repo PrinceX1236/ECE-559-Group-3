@@ -1,0 +1,19 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/encoder_module.vhd}
+vcom -93 -work work {E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd}
+vcom -93 -work work {E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/shiftreg.vhd}
+
+vcom -93 -work work {E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/simulation/modelsim/turbo_encoder.vht}
+
+vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  turbo_encoder_vhd_tst
+
+add wave *
+view structure
+view signals
+run -all

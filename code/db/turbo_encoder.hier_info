@@ -1,0 +1,284 @@
+|turbo_encoder
+clock => encoder_module:encoder_module0.clock
+clock => counter[0].CLK
+clock => counter[1].CLK
+clock => counter[2].CLK
+clock => counter[3].CLK
+clock => counter[4].CLK
+clock => counter[5].CLK
+clock => counter[6].CLK
+clock => counter[7].CLK
+clock => counter[8].CLK
+clock => counter[9].CLK
+clock => counter[10].CLK
+clock => counter[11].CLK
+clock => counter[12].CLK
+clock => encoder_module:encoder_module1.clock
+clock => shiftreg:sft0.clock
+clock => shiftreg:sft1.clock
+clock => shiftreg:sft2.clock
+clock => shiftreg:sft3.clock
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => encoder_module:encoder_module0.reset
+reset => encoder_module:encoder_module1.reset
+reset => shiftreg:sft0.sclr
+reset => shiftreg:sft1.sclr
+reset => shiftreg:sft2.sclr
+reset => shiftreg:sft3.sclr
+cin => c_t1.DATAB
+cin => x.DATAB
+d0 <= d0.DB_MAX_OUTPUT_PORT_TYPE
+d1 <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d2 <= d2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|turbo_encoder|encoder_module:encoder_module0
+clock => shiftreg:sft0.clock
+reset => shiftreg:sft0.sclr
+cin => sft_in.IN1
+zout <= zout.DB_MAX_OUTPUT_PORT_TYPE
+qout <= sft_in.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|turbo_encoder|encoder_module:encoder_module0|shiftreg:sft0
+clock => lpm_shiftreg:LPM_SHIFTREG_component.clock
+enable => lpm_shiftreg:LPM_SHIFTREG_component.enable
+sclr => lpm_shiftreg:LPM_SHIFTREG_component.sclr
+shiftin => lpm_shiftreg:LPM_SHIFTREG_component.shiftin
+q[0] <= lpm_shiftreg:LPM_SHIFTREG_component.q[0]
+q[1] <= lpm_shiftreg:LPM_SHIFTREG_component.q[1]
+q[2] <= lpm_shiftreg:LPM_SHIFTREG_component.q[2]
+
+
+|turbo_encoder|encoder_module:encoder_module0|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component
+data[0] => _.IN1
+data[1] => _.IN1
+data[2] => _.IN1
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+load => _.IN0
+load => _.IN0
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|turbo_encoder|encoder_module:encoder_module1
+clock => shiftreg:sft0.clock
+reset => shiftreg:sft0.sclr
+cin => sft_in.IN1
+zout <= zout.DB_MAX_OUTPUT_PORT_TYPE
+qout <= sft_in.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|turbo_encoder|encoder_module:encoder_module1|shiftreg:sft0
+clock => lpm_shiftreg:LPM_SHIFTREG_component.clock
+enable => lpm_shiftreg:LPM_SHIFTREG_component.enable
+sclr => lpm_shiftreg:LPM_SHIFTREG_component.sclr
+shiftin => lpm_shiftreg:LPM_SHIFTREG_component.shiftin
+q[0] <= lpm_shiftreg:LPM_SHIFTREG_component.q[0]
+q[1] <= lpm_shiftreg:LPM_SHIFTREG_component.q[1]
+q[2] <= lpm_shiftreg:LPM_SHIFTREG_component.q[2]
+
+
+|turbo_encoder|encoder_module:encoder_module1|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component
+data[0] => _.IN1
+data[1] => _.IN1
+data[2] => _.IN1
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+load => _.IN0
+load => _.IN0
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|turbo_encoder|shiftreg:sft0
+clock => lpm_shiftreg:LPM_SHIFTREG_component.clock
+enable => lpm_shiftreg:LPM_SHIFTREG_component.enable
+sclr => lpm_shiftreg:LPM_SHIFTREG_component.sclr
+shiftin => lpm_shiftreg:LPM_SHIFTREG_component.shiftin
+q[0] <= lpm_shiftreg:LPM_SHIFTREG_component.q[0]
+q[1] <= lpm_shiftreg:LPM_SHIFTREG_component.q[1]
+q[2] <= lpm_shiftreg:LPM_SHIFTREG_component.q[2]
+
+
+|turbo_encoder|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component
+data[0] => _.IN1
+data[1] => _.IN1
+data[2] => _.IN1
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+load => _.IN0
+load => _.IN0
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|turbo_encoder|shiftreg:sft1
+clock => lpm_shiftreg:LPM_SHIFTREG_component.clock
+enable => lpm_shiftreg:LPM_SHIFTREG_component.enable
+sclr => lpm_shiftreg:LPM_SHIFTREG_component.sclr
+shiftin => lpm_shiftreg:LPM_SHIFTREG_component.shiftin
+q[0] <= lpm_shiftreg:LPM_SHIFTREG_component.q[0]
+q[1] <= lpm_shiftreg:LPM_SHIFTREG_component.q[1]
+q[2] <= lpm_shiftreg:LPM_SHIFTREG_component.q[2]
+
+
+|turbo_encoder|shiftreg:sft1|lpm_shiftreg:LPM_SHIFTREG_component
+data[0] => _.IN1
+data[1] => _.IN1
+data[2] => _.IN1
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+load => _.IN0
+load => _.IN0
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|turbo_encoder|shiftreg:sft2
+clock => lpm_shiftreg:LPM_SHIFTREG_component.clock
+enable => lpm_shiftreg:LPM_SHIFTREG_component.enable
+sclr => lpm_shiftreg:LPM_SHIFTREG_component.sclr
+shiftin => lpm_shiftreg:LPM_SHIFTREG_component.shiftin
+q[0] <= lpm_shiftreg:LPM_SHIFTREG_component.q[0]
+q[1] <= lpm_shiftreg:LPM_SHIFTREG_component.q[1]
+q[2] <= lpm_shiftreg:LPM_SHIFTREG_component.q[2]
+
+
+|turbo_encoder|shiftreg:sft2|lpm_shiftreg:LPM_SHIFTREG_component
+data[0] => _.IN1
+data[1] => _.IN1
+data[2] => _.IN1
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+load => _.IN0
+load => _.IN0
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|turbo_encoder|shiftreg:sft3
+clock => lpm_shiftreg:LPM_SHIFTREG_component.clock
+enable => lpm_shiftreg:LPM_SHIFTREG_component.enable
+sclr => lpm_shiftreg:LPM_SHIFTREG_component.sclr
+shiftin => lpm_shiftreg:LPM_SHIFTREG_component.shiftin
+q[0] <= lpm_shiftreg:LPM_SHIFTREG_component.q[0]
+q[1] <= lpm_shiftreg:LPM_SHIFTREG_component.q[1]
+q[2] <= lpm_shiftreg:LPM_SHIFTREG_component.q[2]
+
+
+|turbo_encoder|shiftreg:sft3|lpm_shiftreg:LPM_SHIFTREG_component
+data[0] => _.IN1
+data[1] => _.IN1
+data[2] => _.IN1
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+load => _.IN0
+load => _.IN0
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
+
+
