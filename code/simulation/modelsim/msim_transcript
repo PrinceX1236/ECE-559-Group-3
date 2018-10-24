@@ -1,0 +1,131 @@
+# Reading E:/Quartus_Prime/modelsim_ase/tcl/vsim/pref.tcl
+# do turbo_encoder_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying E:/Quartus_Prime/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/encoder_module.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:41:09 on Oct 23,2018
+# vcom -reportprogress 300 -93 -work work E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/encoder_module.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity encoder_module
+# -- Compiling architecture arc of encoder_module
+# End time: 12:41:09 on Oct 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:41:09 on Oct 23,2018
+# vcom -reportprogress 300 -93 -work work E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity turbo_encoder
+# -- Compiling architecture arc of turbo_encoder
+# End time: 12:41:10 on Oct 23,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/shiftreg.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:41:10 on Oct 23,2018
+# vcom -reportprogress 300 -93 -work work E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/shiftreg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity shiftreg
+# -- Compiling architecture SYN of shiftreg
+# End time: 12:41:10 on Oct 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/simulation/modelsim/turbo_encoder.vht}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:41:10 on Oct 23,2018
+# vcom -reportprogress 300 -93 -work work E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/simulation/modelsim/turbo_encoder.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity turbo_encoder_vhd_tst
+# -- Compiling architecture turbo_encoder_arch of turbo_encoder_vhd_tst
+# End time: 12:41:10 on Oct 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  turbo_encoder_vhd_tst
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs=""+acc"" turbo_encoder_vhd_tst 
+# Start time: 12:41:10 on Oct 23,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.turbo_encoder_vhd_tst(turbo_encoder_arch)
+# Loading work.turbo_encoder(arc)
+# Loading work.encoder_module(arc)
+# Loading work.shiftreg(syn)
+# Loading lpm.lpm_components
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_shiftreg(lpm_syn)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 4  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 5  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 5  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 5  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 5  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 6  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 6  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 6  Instance: /turbo_encoder_vhd_tst/i1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 6  Instance: /turbo_encoder_vhd_tst/i1
+# End time: 14:12:29 on Oct 23,2018, Elapsed time: 1:31:19
+# Errors: 0, Warnings: 24
