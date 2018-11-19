@@ -16,14 +16,14 @@ end entity;
 
 architecture arc of encoder_module is
 
-component shiftreg
+component shiftreg_3b
 	port
 	(
-		clock		: in std_logic ;
-		enable		: in std_logic ;
-		sclr		: in std_logic ;
-		shiftin		: in std_logic ;
-		q		: out std_logic_vector (2 downto 0)
+		aclr   : in std_logic ;
+		clock  : in std_logic ;
+		enable : in std_logic ;
+		shiftin: in std_logic ;
+		q      : out std_logic_vector (2 downto 0)
 	);
 end component;
 
@@ -37,10 +37,10 @@ zout <= (sft_in xor q_x(2)) xor q_x(0);
 qout <= q_x(0) xor q_x(1);
 
 
-sft0 : shiftreg port map(
+sft0 : shiftreg_3b port map(
+						  aclr    => reset,
 						  clock   => clock,
 						  enable  => '1',
-						  sclr    => reset,
 						  shiftin => sft_in,
 						  q       => q_x
 						);
